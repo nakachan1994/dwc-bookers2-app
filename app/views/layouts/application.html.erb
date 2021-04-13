@@ -24,8 +24,30 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <!--headerのリンク部分model,controller,view作ったあとに-->
+                <%= link_to "Home", users_show_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Users", users_index_path %>
+              </li>
+              <li class="nav-item">
+                <!--books root作成後変更-->
+                <%= link_to "Books", root_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+              <% else %>
+              <li class="nav-item">
                 <%= link_to "Home", root_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "About", homes_about_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "sign up", new_user_registration_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "login", new_user_session_path %>
               </li>
               <% end %>
             </ul>
