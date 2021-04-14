@@ -1,3 +1,4 @@
+<p id="notice"></p>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
@@ -28,8 +29,8 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 
-        <div class="btn btn-sm btn-success">
-          <%= f.submit "Sign up" %>
+        <div class="actions">
+          <%= f.submit "Sign up", class:"btn btn-sm btn-success" %>
         </div>
       <% end %>
 
