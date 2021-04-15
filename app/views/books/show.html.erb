@@ -1,13 +1,10 @@
 <p id="notice"></p>
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <!--user info-->
     <div class="col-md-3">
-
+       <!--useeinfo部分テンプレート-->
+      <%= render 'books/userinfo', user: @user, book: @book %>
     </div>
-    <!--books-->
-    <div class="col-md-8 ofset-md-1">
-
-    </div>
+    
   </div>
 </div>
