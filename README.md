@@ -1,2 +1,2 @@
 # Bookers2
-"Bookers2"は本のレビューSNS
+"Bookers2"は本のレビューSNSです
