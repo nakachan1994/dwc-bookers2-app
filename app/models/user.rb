@@ -13,12 +13,12 @@ class User < ApplicationRecord
   # フォローしてる人、されてる人の一覧
   has_many :following_user, through: :follower, source: :followed
   has_many :follower_id, through: :followed, source: :follower
-
+  
   attachment :profile_image
 
   validates :name,presence:true, uniqueness:true, length:{minimum:2,maximum:20}
   validates :introduction, length:{maximum:50}
-
+  
   # ユーザーをフォローする
   def follow(user_id)
     follower.create(followed_id: user_id)

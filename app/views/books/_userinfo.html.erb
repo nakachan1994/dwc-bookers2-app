@@ -12,8 +12,23 @@
             <th>introduction</th>
             <th><%= user.introduction %></th>
           </tr>
+          <tr>
+            <th>follows</th>
+            <!--リンクにする-->
+            <th>
+              <%= user.following_user.count %>
+            </th>
+          </tr>
+          <tr>
+            <th>followers</th>
+            <!--リンクにする-->
+            <th>
+              <%= user.follower_id.count %>
+            </th>
+          </tr>
         </tbody>
       </table>
+      <%= link_to "フォローする", relationships_path, method: :post, class:'btn btn-success mb-2' %>
       <div class="row">
         <%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary btn-block" do %>
           <span class="fas fa-user-cog"></span>
