@@ -35,9 +35,9 @@
             <td>
               <% unless user == current_user %>
                 <% if current_user.following?(user) %>
-                  <%= link_to "フォロー外す", relationship_path(user.id), method: :delete %>
+                  <%= link_to "フォロー外す", unfollow_path(user.id), method: :post %>
                 <% else %>
-                  <%= link_to "フォローする", relationships_path(user.id), method: :post %>
+                  <%= link_to "フォローする", follow_path(user.id), method: :post %>
                 <% end %>
               <% end %>
             </td>
