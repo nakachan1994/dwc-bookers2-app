@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show, :edit, :update]
   post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
-  get 'relationship/followings' => 'relationships#followings', as: 'relationships_followings'
-  get 'relationship/followers' => 'relationships#followers', as: 'relationships_followers'
+  post 'followings/:id' => 'relationships#followings', as: 'followings'
+  post 'followers/:id' => 'relationships#followers', as: 'followers'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

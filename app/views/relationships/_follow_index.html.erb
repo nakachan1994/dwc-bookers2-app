@@ -1,32 +1,36 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>image</th>
-      <th>name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% users.each do |user| %>
-    <tr>
-      <td>
-        <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpg',fallback: "person.jpg", size:"40x40"%>
-      </td>
-      <td><%= user.name %></td>
-      <td>
-        <p>
-          フォロー数：<%= user.following_user.count %>
-        </p>
-      </td>
-      <td>
-        <p>
-          フォロワー数：<%= user.follower_id.count %>
-        </p>
-      </td>
-      <td>
-        <%= link_to "Show", user_path(user.id) %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if @users.empty? %>
+  <p>ユーザーはいません</p>
+<% else %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.each do |user| %>
+      <tr>
+        <td>
+          <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpg',fallback: "person.jpg", size:"40x40"%>
+        </td>
+        <td><%= user.name %></td>
+        <td>
+          <p>
+            フォロー数：<%= user.following_user.count %>
+          </p>
+        </td>
+        <td>
+          <p>
+            フォロワー数：<%= user.follower_id.count %>
+          </p>
+        </td>
+        <td>
+          <%= link_to "Show", user_path(user.id) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
