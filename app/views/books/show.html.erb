@@ -41,10 +41,10 @@
         </tbody>
       </table>
       <div class="comments_area d-flex flex-column">
-        <%= render 'book_comments/comments', book: @book %>
+        <%= render 'book_comments/comments', book: @book, book_comment: @book_comment %>
       </div>
       <div class="errors-message">
-        <%= render 'layouts/errors', book_comment: @book_comment %>
+        <%= render 'book_comments/errors', book_comment: @book_comment %>
       </div>
       <div class="comment-form">
          <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>

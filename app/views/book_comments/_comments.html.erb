@@ -1,3 +1,4 @@
+
 <% book.book_comments.each do |book_comment| %>
   <div class="comments-group d-flex justify-content-start">
     <div class="comment-user">
@@ -17,3 +18,13 @@
     </div>
   </div>
 <% end %>
+<div class="error-message text-danger">
+  <% if book_comment.errors.any? %>
+  <h3><%= book_comment.errors.count %>errors prohibited this obj from being saved:</h3>
+  <ul>
+    <% book_comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
