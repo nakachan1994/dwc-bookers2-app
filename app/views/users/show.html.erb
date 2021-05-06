@@ -32,7 +32,7 @@
             <td>
               <%= book.body %>
             </td>
-            <td>
+            <td class="book-<%= book.id %>">
               <%= render 'books/favorite', book: book %>
             </td>
             <td>
