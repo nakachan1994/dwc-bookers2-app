@@ -40,16 +40,14 @@
           </tr>
         </tbody>
       </table>
-      <div class="comments d-flex flex-column">
-        <% @book.book_comments.each do |book_comment| %>
-          <%= render 'book_comments/comments', book: book %>
-        <% end %>
+      <div class="comments_area d-flex flex-column">
+        <%= render 'book_comments/comments', book: @book %>
+      </div>
+      <div class="errors-message">
+        <%= render 'layouts/errors', book_comment: @book_comment %>
       </div>
       <div class="comment-form">
-        <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-          <%= f.text_area :comment, rows:'5', class:'form-control' %><br>
-          <%= f.submit "送信" %>
-        <% end %>
+         <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>
       </div>
     </div>
   </div>
