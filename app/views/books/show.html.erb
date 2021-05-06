@@ -42,23 +42,7 @@
       </table>
       <div class="comments d-flex flex-column">
         <% @book.book_comments.each do |book_comment| %>
-          <div class="comments-group d-flex justify-content-start">
-            <div class="comment-user">
-              <%= attachment_image_tag book_comment.user, :profile_image, :fill, 40, 40, format: 'jpg',fallback: "person.jpg", size:"40x40"%>
-              <br>
-              <%= link_to user_path(book_comment.user_id) do %>
-                <%= book_comment.user.name %>
-              <% end %>
-            </div>
-            <div class="comment">
-              <%= book_comment.comment %>
-            </div>
-            <div class="comment-delete">
-              <% if book_comment.user_id == current_user.id %>
-                <%= link_to 'Destroy', book_book_comment_path(book_comment.book, book_comment), method: :delete, class:"btn btn-sm btn-danger ml-1" %>
-              <% end %>
-            </div>
-          </div>
+          <%= render 'book_comments/comments', book: book %>
         <% end %>
       </div>
       <div class="comment-form">
