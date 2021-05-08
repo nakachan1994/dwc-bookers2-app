@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chats/show'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
   post 'followings/:id' => 'relationships#followings', as: 'followings'
   post 'followers/:id' => 'relationships#followers', as: 'followers'
   get 'search' => 'searches#search', as: 'search'
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -13,6 +13,9 @@ class User < ApplicationRecord
   # フォローしてる人、されてる人の一覧
   has_many :following_user, through: :follower, source: :followed
   has_many :follower_id, through: :followed, source: :follower
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
 
   attachment :profile_image
 
