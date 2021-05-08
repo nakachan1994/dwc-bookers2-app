@@ -55,7 +55,7 @@
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_user_registration_path do %>
+                <%= link_to new_user_registration_path, data: {"turbolinks" => false} do %>
                   <span class="fas fa-user-plus nav-link text-light"> sign up</span>
                 <% end %>
               </li>
