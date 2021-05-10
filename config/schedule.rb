@@ -15,7 +15,7 @@ set :environment, :development
 #   rake "some:great:rake:task"
 # end
 #
-every 1.days, at: '9:00 am' do
+every 1.minutes do
 
   runner "DailyMailer.daily_notification"
 end
