@@ -17,6 +17,6 @@ end
       :address_city,
       :address_street,
       :address_building
-      ])
+    ])
   end
 end
